@@ -29,9 +29,9 @@ pipeline {
          stage ('Scan Sonar'){
             steps {
     sh "mvn sonar:sonar \
-          -Dsonar.projectKey=achat \
-          -Dsonar.host.url=http://192.168.33.10:9000 \
-          -Dsonar.login=68359cf3e9b325d9706fedbb1b2747978c9163d6"
+  -Dsonar.projectKey=achat \
+  -Dsonar.host.url=http://192.168.33.10:9000 \
+  -Dsonar.login=137a3cfa3279c3dd95eb8fdbabd3b30d46dec28f"
     }
         }
         stage('Nexus') {
