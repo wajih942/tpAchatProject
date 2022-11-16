@@ -7,7 +7,7 @@ pipeline {
     stages {
          stage('Cloning from GitHub') {
                 steps {
-                    git branch: 'main', url: 'https://github.com/KlaiGhassen/devops'
+                    git branch: 'main', url: 'https://github.com/wajih942/tpAchatProject'
                 }  
             }
               
@@ -29,9 +29,9 @@ pipeline {
          stage ('Scan Sonar'){
             steps {
     sh "mvn sonar:sonar \
-  -Dsonar.projectKey=achat \
+  -Dsonar.projectKey=achat123 \
   -Dsonar.host.url=http://192.168.33.10:9000 \
-  -Dsonar.login=137a3cfa3279c3dd95eb8fdbabd3b30d46dec28f"
+  -Dsonar.login=d335b64650a44234a22bbf17558f7969937347a2"
     }
         }
         stage('Nexus') {
@@ -42,7 +42,7 @@ pipeline {
        
      stage("Building Docker Image") {
                 steps{
-                    sh 'docker build -t gaston2100/achat .'
+                    sh 'docker build -t wajih1201/achat .'
                 }
         }
         
@@ -50,12 +50,12 @@ pipeline {
            stage("Login to DockerHub") {
                 steps{
                    // sh 'sudo chmod 666 /var/run/docker.sock'
-                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u gaston2100 -p hinda2100@@'
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u wajih1201 -p wajihjimi2'
                 }
         }
         stage("Push to DockerHub") {
                 steps{
-                    sh 'docker push gaston2100/achat'
+                    sh 'docker push wajih1201/achat'
                 }
         }
     
