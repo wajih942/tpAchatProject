@@ -50,7 +50,7 @@ pipeline {
            stage("Login to DockerHub") {
                 steps{
                    // sh 'sudo chmod 666 /var/run/docker.sock'
-                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u wajih1201 -p wajihjimi2'
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u wajih1201 -p wajih'
                 }
         }
         stage("Push to DockerHub") {
